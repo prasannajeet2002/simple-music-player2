@@ -1,4 +1,4 @@
-let audioElement = new Audio('./songs/1.mp3');
+let audioElement = new Audio('1.mp3');
 let playsong = document.getElementById('play');
 let nextsong = document.getElementById('next');
 let prevsong = document.getElementById('previous');
@@ -8,15 +8,15 @@ let songitems = Array.from(document.getElementsByClassName('song-capsule'));
 let songname = document.getElementById('songname');
 
 let songs = [
-{songName: "Aashiq Banaya Aapne" , filepath: "songs/1.mp3"},
-{songName: "Baarish Ban Jaana" , filepath: "songs/2.mp3"},
-{songName: "Dil Ne Yeh Kaha Hain Dil Se" , filepath: "songs/3.mp3"},
-{songName: "Humnava Mere" , filepath: "songs/4.mp3"},
-{songName: "Mera Chand Mujhe Aaya Hai Nazar" , filepath: "songs/6.mp3"},
-{songName: "Sang Hoon Tere" , filepath: "songs/5.mp3"},
-{songName: "Tu Hi Mera" , filepath: "songs/7.mp3"},
-{songName: "Tujhe Sochta Hoon" , filepath: "songs/8.mp3"},
-{songName: "Tum Dil Ki Dhadkan Mein" , filepath: "songs/9.mp3"},
+{songName: "Aashiq Banaya Aapne" , filepath: "1.mp3"},
+{songName: "Baarish Ban Jaana" , filepath: "2.mp3"},
+{songName: "Dil Ne Yeh Kaha Hain Dil Se" , filepath: "3.mp3"},
+{songName: "Humnava Mere" , filepath: "4.mp3"},
+{songName: "Mera Chand Mujhe Aaya Hai Nazar" , filepath: "6.mp3"},
+{songName: "Sang Hoon Tere" , filepath: "5.mp3"},
+{songName: "Tu Hi Mera" , filepath: "7.mp3"},
+{songName: "Tujhe Sochta Hoon" , filepath: "8.mp3"},
+{songName: "Tum Dil Ki Dhadkan Mein" , filepath: "9.mp3"},
 ]
 
 songitems.forEach((song , i)=>{
@@ -56,7 +56,7 @@ element.addEventListener('click',(e)=>{
     e.target.classList.remove('fa-play-circle');
     e.target.classList.add('fa-pause-circle');
     songIndex = parseInt(e.target.id);
-    audioElement.src = `songs/${songIndex+1}.mp3`;
+    audioElement.src = `${songIndex+1}.mp3`;
     songname.innerText = songs[songIndex].songName;
     audioElement.currentTime=0;
     audioElement.play();
@@ -71,7 +71,7 @@ document.getElementById('next').addEventListener('click',()=>{
     }else{
         songIndex +=1;
     }
-    audioElement.src = `songs/${songIndex+1}.mp3`;
+    audioElement.src = `${songIndex+1}.mp3`;
     songname.innerText = songs[songIndex].songName;
     audioElement.currentTime=0;
     audioElement.play();
@@ -85,7 +85,7 @@ document.getElementById('previous').addEventListener('click',()=>{
     }else{
         songIndex -=1;
     }
-    audioElement.src = `songs/${songIndex+1}.mp3`;
+    audioElement.src = `${songIndex+1}.mp3`;
     songname.innerText = songs[songIndex].songName;
     audioElement.currentTime=0;
     audioElement.play();
